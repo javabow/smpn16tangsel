@@ -1,0 +1,19 @@
+.sh-cat {
+  font-weight: 800;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sh-cat:hover {
+  color: blue;
+}
+
+#cat-select {
+  list-style: none;
+}
+#cat-select li {
+  cursor: pointer;
+  display: none;
+}
+
+/*# sourceMappingURL=posts-edit.css.map */

@@ -1,0 +1,20 @@
+iParkir Administration
+1. Fitur Create Parameter {
+  *Merk Kendaraan
+
+  *Type Kendaraan
+}
+2. Fitur Create Kerjasama pengelola parkir {
+
+}
+3. Fitur create user pengelola parkir
+4. Fitur create tenan
+5. Fitur create data promosi tenan
+
+Pengelola Parkir Administration
+1. Fitur create juru parkir
+
+
+
+### pindahkan tenants ke sysadmin
+lokasi bisa lebih dari 1, di promosi tenants

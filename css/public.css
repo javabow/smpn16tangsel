@@ -1,0 +1,72 @@
+.font-logo {
+  font-family: "Ubuntu", "Nunito", sans-serif;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.nav-scrolled {
+  background-color: #466cb6;
+  position: fixed;
+  width: 100%;
+  transition-duration: 2s;
+}
+
+nav {
+  background-color: #466cb6;
+  font-weight: 800;
+  top: 0;
+  z-index: 4;
+  box-shadow: 1px 1px 5px #273837;
+}
+nav .navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+nav .navbar-brand img.img-fluid {
+  height: 2.8rem;
+}
+nav a {
+  color: #fff;
+}
+nav a:hover {
+  color: #8cfff7;
+}
+nav .dropdown-menu {
+  left: unset;
+  width: 100%;
+}
+nav .dropdown-menu a:hover {
+  background-color: #f3f3f3;
+}
+nav .dropdown-menu a:active {
+  color: unset;
+}
+
+footer {
+  display: flex;
+  padding: 1rem;
+  background-color: #081b41;
+  color: #fff;
+}
+footer p {
+  margin: 0;
+}
+
+.img-container {
+  height: 25%;
+  overflow: hidden;
+  display: flex;
+}
+.img-container img {
+  margin-bottom: auto;
+}
+
+@media only screen and (max-width: 990px) {
+  .nav-item.active.ml-auto {
+    margin-left: unset !important;
+  }
+}
+
+/*# sourceMappingURL=public.css.map */
