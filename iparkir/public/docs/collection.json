@@ -1,0 +1,69 @@
+{
+    "variables": [],
+    "info": {
+        "name": "iParkir API",
+        "_postman_id": "e74a0b38-191e-4334-84d0-10befe12dee5",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Promosi Tenants",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/tenants-promo\nApi Promosi Tenants, select TenantsPromo, TenantsPromo Location, TenantsPromo Fotos, Tenants, Tenants Locations, Tenants Fotos, Tenants Opening Hours.",
+                    "request": {
+                        "url": "http:\/\/iparkir.id\/api\/tenants-promo?where=id%2C%21%3D%2C1&orderBy=id%2CDESC&limit=3&offset=2",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tenants",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/tenants\nApi Tenants, select Tenants, Tenants Locations, Tenants Fotos, Tenants Opening Hours.",
+                    "request": {
+                        "url": "http:\/\/iparkir.id\/api\/tenants?where=id%2C%21%3D%2C1&orderBy=id%2CDESC&limit=3&offset=2",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -6,9 +6,22 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Api\BaseController as BaseController;
 use App\AdminModel\Tenants;
 
+/**
+ * @group Tenants
+ * APIs for managing tenants
+ */
 class TenantsController extends BaseController
 {
 
+
+  /**
+  * api/tenants
+  * Api Tenants, select Tenants, Tenants Locations, Tenants Fotos, Tenants Opening Hours.
+  * @queryParam where optional isi query string dengan 3 argumen, pisahkan dengan koma.  contoh: ?where=id,!=,1  Example: id,!=,1
+  * @queryParam orderBy optional isi query string dengan 2 argumen, pisahkan dengan koma.  contoh: ?orderBy=id,DESC Example: id,DESC
+  * @queryParam limit optional untuk membatasi banyak rows yang ditampilkan. contoh: ?limit=3. Example: 3
+  * @queryParam offset optional (hanya bisa dipakai jika menggunakan query limit). contoh: ?offset=2. Example: 2
+  */
    public function index(Request $request)
    {
        $where = $request->input('where');
@@ -50,4 +63,5 @@ class TenantsController extends BaseController
        }
 
    }
+
 }

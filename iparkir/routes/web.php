@@ -22,7 +22,9 @@ Auth::routes();
 Route::get('/test-unisharp', function() {
     return view('unisharp');
 });
-
+Route::get('/docs', function() {
+  return view('docs.source');
+});
 Route::get('/', 'HomepageController@index');
 Route::get('/set-lang/{lang}', 'LangController@lang');
 

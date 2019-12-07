@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/tenants-promo', 'Api\PromosiTenantsController@index');
 Route::get('/tenants', 'Api\TenantsController@index');
+Route::get('/tenants-promo', 'Api\PromosiTenantsController@index');
 // Route::get('/tenants-promo/{select?}/{where?}/{orderBy?}/{limit?}/{offset?}', 'Api\PromosiTenantsController@get');
