@@ -28,11 +28,14 @@ Admin Page Pengelola Parkir | Promosi Tenants - Create
       <label for="location">Lokasi Promo</label>
       <p>Berapa jumlah lokasi yang ingin ditambahkan ? (Tekan TAB untuk Oke) <input type="number" id="loclen" value="1"></p>
       <div id="loc-container" class="form-group border p-3">
-        <p>Lokasi 1</p>
-        <label>Nama Lokasi</label> <input class="form-control" type="text" name="location_name[]" >
-        <label>Alamat Lokasi</label> <input class="form-control" type="text" name="location_address[]" >
-        <label>Latitude</label> <input class="form-control" type="number" name="lat[]" step="any">
-        <label>Longitude</label> <input class="form-control" type="number" name="lng[]" step="any">
+        <div class="ss1">
+          <p>Lokasi 1</p>
+          <label>Nama Lokasi</label> <input class="form-control" type="text" name="location_name[]" >
+          <label>Alamat Lokasi</label> <input class="form-control" type="text" name="location_address[]" >
+          <label>Latitude</label> <input class="form-control" type="number" name="lat[]" step="any">
+          <label>Longitude</label> <input class="form-control" type="number" name="lng[]" step="any">
+          <br>
+        </div>
       </div>
     </div>
     <div class="form-group">

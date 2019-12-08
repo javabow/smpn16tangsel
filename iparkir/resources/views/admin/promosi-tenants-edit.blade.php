@@ -32,12 +32,14 @@ Admin Page Pengelola Parkir | Promosi Tenants - Create
           $i = 1
         @endphp
         @foreach ($tenantsPromo->locations as $key => $value)
-          <p>Lokasi {{ $i++ }}</p>
-          <label>Nama Lokasi</label> <input class="form-control" type="text" name="location_name[]" value="{{ $value->name }}">
-          <label>Alamat Lokasi</label> <input class="form-control" type="text" name="location_address[]" value="{{ $value->address }}">
-          <label>Latitude</label> <input class="form-control" type="number" name="lat[]" step="any" value="{{ $value->lat }}">
-          <label>Longitude</label> <input class="form-control" type="number" name="lng[]" step="any" value="{{ $value->lng }}">
-          <br>
+          <div class="ss{{$i}}">
+            <p>Lokasi {{ $i++ }}</p>
+            <label>Nama Lokasi</label> <input class="form-control" type="text" name="location_name[]" value="{{ $value->name }}">
+            <label>Alamat Lokasi</label> <input class="form-control" type="text" name="location_address[]" value="{{ $value->address }}">
+            <label>Latitude</label> <input class="form-control" type="number" name="lat[]" step="any" value="{{ $value->lat }}">
+            <label>Longitude</label> <input class="form-control" type="number" name="lng[]" step="any" value="{{ $value->lng }}">
+            <br>
+          </div>
         @endforeach
       </div>
     </div>
