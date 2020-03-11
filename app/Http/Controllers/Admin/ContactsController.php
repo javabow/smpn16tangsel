@@ -15,8 +15,8 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        $contacts = Contacts::all();
-        return view('admin.contacts', ['contacts'=>$contacts]);
+        $contact = Contacts::find(1);
+        return view('admin.contacts', ['contact'=>$contact]);
     }
 
     /**
@@ -73,13 +73,12 @@ class ContactsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-          'name' => 'required',
-          'position' => 'required',
           'email' => 'required',
+          'address' => 'required',
           'phone' => 'required',
-          'foto' => 'required',
+          'fax' => 'required',
         ]);
-        $data = $request->only(['name', 'position', 'email', 'phone', 'foto']);
+        $data = $request->only(['email', 'address', 'phone', 'fax']);
         $contact = Contacts::find($id);
         foreach ($data as $key => $value) {
           $contact->{$key} = $value;

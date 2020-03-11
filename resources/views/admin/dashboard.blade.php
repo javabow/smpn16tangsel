@@ -1,6 +1,6 @@
 @extends('admin-templates.admin-templates')
 @section('title')
-Admin Page iParkir | Dashboard
+Admin Page SMKN 16 Tangerang Selatan | Dashboard
 @endsection
 @section('title-header')
   Dashboard

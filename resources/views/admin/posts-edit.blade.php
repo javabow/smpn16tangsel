@@ -1,6 +1,6 @@
 @extends('admin-templates.admin-templates')
 @section('title')
-Admin Page iParkir | Posts - Edit
+Admin Page SMKN 16 Tangerang Selatan | Posts - Edit
 @endsection
 @section('css')
   <link rel="stylesheet" href="{{ asset('css/posts-edit.css') }}">
@@ -64,7 +64,7 @@ Admin Page iParkir | Posts - Edit
       </ul>
     </div>
     <div class="form-group">
-      <label for="tags"><strong>Tags <small>#Tekan tombol <strong>Tab</strong> untuk menambahkan tag baru</small></strong></label> <br>
+      <label for="tags"><strong>Tags</strong></label> <br>
       <select class="tags form-control" id="tags" name="tags[]" multiple="multiple">
         @foreach ($tags as $tag)
           <option value="{{ $tag->id.'-'.$tag->name }}" @foreach ($post->tags as $t)

@@ -68,31 +68,13 @@ class DatabaseSeeder extends Seeder
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
         ]);
-        DB::table('user_roles')->insert([
-           'id' => '2',
-           'name' => 'pengelola parkir',
-           'created_at' => date('Y-m-d H:i:s'),
-           'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('user_roles')->insert([
-           'id' => '3',
-           'name' => 'customer',
-           'created_at' => date('Y-m-d H:i:s'),
-           'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-        DB::table('user_roles')->insert([
-           'id' => '4',
-           'name' => 'juru parkir',
-           'created_at' => date('Y-m-d H:i:s'),
-           'updated_at' => date('Y-m-d H:i:s'),
-        ]);
         // seeding users table
         DB::table('users')->insert([
           'name' => 'admin',
           'username' => 'admin',
-          'email' => 'admin@iparkir.com',
-          'password' => bcrypt('admin123'),
-          'dp' => 'photos/1/thumbs/dp.jpg',
+          'email' => 'admin@smpn16tangsel.sch.id',
+          'password' => bcrypt('$admin123#'),
+          'dp' => 'img/profil-pic_dummy.png',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
           'id_user_roles' => '1'
@@ -102,13 +84,35 @@ class DatabaseSeeder extends Seeder
           'username' => 'lingling',
           'email' => 'lingling@gmail.com',
           'password' => bcrypt('lingling'),
-          'dp' => 'photos/1/thumbs/dp.jpg',
+          'dp' => 'img/profil-pic_dummy.png',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
-          'id_user_roles' => '2'
+          'id_user_roles' => '1'
         ]);
 
+        // page status
 
+        DB::table('page_status')->insert([
+          'id' => '1',
+          'name' => 'Published',
+          'name_en' => 'Diterbitkan',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('page_status')->insert([
+          'id' => '2',
+          'name' => 'Draft',
+          'name_en' => 'Draf',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('page_status')->insert([
+          'id' => '3',
+          'name' => 'Trash',
+          'name_en' => 'Dihapus',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
         // seeding post_status table
         DB::table('post_status')->insert([
           'id' => '1',
@@ -132,7 +136,7 @@ class DatabaseSeeder extends Seeder
           'updated_at' => date('Y-m-d H:i:s')
         ]);
 
-        for ($i=1; $i <= 10; $i++) {
+        for ($i=1; $i <= 7; $i++) {
           DB::table('posts')->insert([
             'id' => $i,
             'title' => 'Lorem Ipsum Dolor '. $i,
@@ -164,62 +168,39 @@ class DatabaseSeeder extends Seeder
 
         DB::table('categories')->insert([
           'id' => '1',
-          'name' => 'lorem',
-          'name_en' => 'lorem',
+          'name' => 'Info Sekolah',
+          'name_en' => 'School Info',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('categories')->insert([
           'id' => '2',
-          'name' => 'ipsum',
-          'name_en' => 'ipsum',
+          'name' => 'Agenda',
+          'name_en' => 'Agenda',
           'parent' => '1',
           'level' => '1',
-          'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
-        ]);
-        DB::table('categories')->insert([
-          'id' => '3',
-          'name' => 'dolor',
-          'name_en' => 'dolor',
-          'parent' => '2',
-          'level' => '2',
-          'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
-        ]);
-        DB::table('categories')->insert([
-          'id' => '4',
-          'name' => 'ipsum',
-          'name_en' => 'ipsum',
-          'created_at' => date('Y-m-d H:i:s'),
-          'updated_at' => date('Y-m-d H:i:s')
-        ]);
-        DB::table('categories')->insert([
-          'id' => '5',
-          'name' => 'dolor',
-          'name_en' => 'dolor',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
 
         DB::table('tags')->insert([
           'id' => '1',
-          'name' => 'lorem',
-          'name_en' => 'lorem',
+          'name' => 'Info',
+          'name_en' => 'Info',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('tags')->insert([
           'id' => '2',
-          'name' => 'ipsum',
-          'name_en' => 'ipsum',
+          'name' => 'PPDB',
+          'name_en' => 'PPDB',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('tags')->insert([
           'id' => '3',
-          'name' => 'dolor',
-          'name_en' => 'dolor',
+          'name' => 'Acara',
+          'name_en' => 'Acara',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -234,12 +215,6 @@ class DatabaseSeeder extends Seeder
           DB::table('categories_posts')->insert([
             'id_posts' => $i,
             'id_categories' => '2',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s')
-          ]);
-          DB::table('categories_posts')->insert([
-            'id_posts' => $i,
-            'id_categories' => '3',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ]);
@@ -262,6 +237,16 @@ class DatabaseSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ]);
+
         }
+        DB::table('contacts')->insert([
+          'id' => 1,
+          'address' => 'Jl. Bhayangkara 1, Paku Jaya, Kec. Serpong Utara, Kota Tangerang Selatan, Banten 15220',
+          'phone' => '021988883333',
+          'email' => 'admin@smpn16tangsel.sch.id',
+          'fax' => '021988883333',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
     }
 }

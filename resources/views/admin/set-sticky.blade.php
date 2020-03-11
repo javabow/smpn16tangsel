@@ -1,6 +1,6 @@
 @extends('admin-templates.admin-templates')
 @section('title')
-Admin Page iParkir | Dashboard - Edit Sticky Note
+Admin Page SMKN 16 Tangerang Selatan | Dashboard - Edit Sticky Note
 @endsection
 @section('title-header')
   Edit Sticky Note

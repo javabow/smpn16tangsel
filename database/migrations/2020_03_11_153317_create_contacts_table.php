@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePageStatusTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePageStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('page_status', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('name_en')->nullable();
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('fax');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePageStatusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('page_status');
+        Schema::dropIfExists('contacts');
     }
 }

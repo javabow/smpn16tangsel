@@ -1,6 +1,6 @@
 @extends('admin-templates.admin-templates')
 @section('title')
-Admin Page iParkir | Users - Edit
+Admin Page SMKN 16 Tangerang Selatan | Users - Edit
 @endsection
 @section('title-header')
   Edit User
