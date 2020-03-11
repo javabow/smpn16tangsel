@@ -17,7 +17,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * @deprecated since Symfony 4.3, use ControllerArgumentsEvent instead
  */
-class FilterControllerArgumentsEvent extends FilterControllerEvent
+class FilterControllerArgumentsEvent extends ControllerEvent
 {
     private $arguments;
 

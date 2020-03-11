@@ -61,6 +61,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
      *
      * @param string|null $foreground The style foreground color name
      * @param string|null $background The style background color name
+     * @param array       $options    The style options
      */
     public function __construct(string $foreground = null, string $background = null, array $options = [])
     {
@@ -76,7 +77,11 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Sets style foreground color.
+     *
+     * @param string|null $color The color name
+     *
+     * @throws InvalidArgumentException When the color name isn't defined
      */
     public function setForeground($color = null)
     {
@@ -94,7 +99,11 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Sets style background color.
+     *
+     * @param string|null $color The color name
+     *
+     * @throws InvalidArgumentException When the color name isn't defined
      */
     public function setBackground($color = null)
     {
@@ -117,7 +126,11 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Sets some specific style option.
+     *
+     * @param string $option The option name
+     *
+     * @throws InvalidArgumentException When the option name isn't defined
      */
     public function setOption($option)
     {
@@ -131,7 +144,11 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Unsets some specific style option.
+     *
+     * @param string $option The option name
+     *
+     * @throws InvalidArgumentException When the option name isn't defined
      */
     public function unsetOption($option)
     {
@@ -158,7 +175,11 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Applies the style to a given text.
+     *
+     * @param string $text The text to style
+     *
+     * @return string
      */
     public function apply($text)
     {

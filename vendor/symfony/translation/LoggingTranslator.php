@@ -31,6 +31,7 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
 
     /**
      * @param TranslatorInterface $translator The translator must implement TranslatorBagInterface
+     * @param LoggerInterface     $logger
      */
     public function __construct($translator, LoggerInterface $logger)
     {
@@ -130,8 +131,12 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
 
     /**
      * Logs for missing translations.
+     *
+     * @param string      $id
+     * @param string|null $domain
+     * @param string|null $locale
      */
-    private function log(?string $id, ?string $domain, ?string $locale)
+    private function log($id, $domain, $locale)
     {
         if (null === $domain) {
             $domain = 'messages';

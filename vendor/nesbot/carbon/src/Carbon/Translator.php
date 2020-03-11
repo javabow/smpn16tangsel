@@ -34,7 +34,7 @@ class Translator extends Translation\Translator
     /**
      * List of custom directories that contain translation files.
      *
-     * @var string[]
+     * @var array
      */
     protected $directories = [];
 
@@ -44,16 +44,6 @@ class Translator extends Translation\Translator
      * @var bool
      */
     protected $initializing = false;
-
-    /**
-     * List of locales aliases.
-     *
-     * @var string[]
-     */
-    protected $aliases = [
-        'me' => 'sr_Latn_ME',
-        'scr' => 'sh',
-    ];
 
     /**
      * Return a singleton instance of Translator.
@@ -212,10 +202,8 @@ class Translator extends Translation\Translator
     public function getLocalesFiles($prefix = '')
     {
         $files = [];
-
         foreach ($this->getDirectories() as $directory) {
             $directory = rtrim($directory, '\\/');
-
             foreach (glob("$directory/$prefix*.php") as $file) {
                 $files[] = $file;
             }
@@ -323,16 +311,12 @@ class Translator extends Translation\Translator
             return '_'.ucfirst($matches[1]);
         }, strtolower($locale));
 
-        $previousLocale = $this->getLocale();
-
-        if ($previousLocale === $locale) {
+        if ($this->getLocale() === $locale) {
             return true;
         }
 
-        unset(static::$singletons[$previousLocale]);
-
         if ($locale === 'auto') {
-            $completeLocale = setlocale(LC_TIME, '0');
+            $completeLocale = setlocale(LC_TIME, 0);
             $locale = preg_replace('/^([^_.-]+).*$/', '$1', $completeLocale);
             $locales = $this->getAvailableLocales($locale);
 
@@ -369,10 +353,6 @@ class Translator extends Translation\Translator
             });
 
             $locale = $locales[0];
-        }
-
-        if (isset($this->aliases[$locale])) {
-            $locale = $this->aliases[$locale];
         }
 
         // If subtag (ex: en_CA) first load the macro (ex: en) to have a fallback

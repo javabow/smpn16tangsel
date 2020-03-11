@@ -1,0 +1,15 @@
+.logo-display, .logo-scrolled {
+  width: 4em;
+}
+header {
+  .carousel-inner {
+    height: 75vh;
+    .carousel-item {
+      height: 75vh;
+      background-size: cover;
+    }
+    .carousel-caption {
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+}

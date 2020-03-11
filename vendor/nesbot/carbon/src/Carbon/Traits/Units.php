@@ -177,7 +177,7 @@ trait Units
      * @param int                 $value
      * @param bool|null           $overflow
      *
-     * @return static
+     * @return CarbonInterface
      */
     public function add($unit, $value = 1, $overflow = null)
     {
@@ -190,7 +190,9 @@ trait Units
         }
 
         if (is_numeric($unit)) {
-            [$value, $unit] = [$unit, $value];
+            $tempUnit = $value;
+            $value = $unit;
+            $unit = $tempUnit;
         }
 
         return $this->addUnit($unit, $value, $overflow);
@@ -203,10 +205,11 @@ trait Units
      * @param int       $value
      * @param bool|null $overflow
      *
-     * @return static
+     * @return CarbonInterface
      */
     public function addUnit($unit, $value = 1, $overflow = null)
     {
+        /** @var CarbonInterface $date */
         $date = $this;
 
         if (!is_numeric($value) || !floatval($value)) {
@@ -232,7 +235,6 @@ trait Units
                 $weekDaysCount = 7 - min(6, count(array_unique($weekendDays)));
                 $weeks = floor($absoluteValue / $weekDaysCount);
                 for ($diff = $absoluteValue % $weekDaysCount; $diff; $diff--) {
-                    /** @var static $date */
                     $date = $date->addDays($sign);
                     while (in_array($date->dayOfWeek, $weekendDays)) {
                         $date = $date->addDays($sign);
@@ -294,7 +296,7 @@ trait Units
      * @param int       $value
      * @param bool|null $overflow
      *
-     * @return static
+     * @return CarbonInterface
      */
     public function subUnit($unit, $value = 1, $overflow = null)
     {
@@ -312,7 +314,7 @@ trait Units
      * @param int                 $value
      * @param bool|null           $overflow
      *
-     * @return static
+     * @return CarbonInterface
      */
     public function sub($unit, $value = 1, $overflow = null)
     {
@@ -340,7 +342,7 @@ trait Units
      * @param int                 $value
      * @param bool|null           $overflow
      *
-     * @return static
+     * @return CarbonInterface
      */
     public function subtract($unit, $value = 1, $overflow = null)
     {

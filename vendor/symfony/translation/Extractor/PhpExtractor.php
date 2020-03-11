@@ -100,7 +100,7 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
      *
      * @param mixed $token
      *
-     * @return string|null
+     * @return string
      */
     protected function normalizeToken($token)
     {
@@ -195,8 +195,9 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     /**
      * Extracts trans message from PHP tokens.
      *
-     * @param array  $tokens
-     * @param string $filename
+     * @param array            $tokens
+     * @param MessageCatalogue $catalog
+     * @param string           $filename
      */
     protected function parseTokens($tokens, MessageCatalogue $catalog/*, string $filename*/)
     {
@@ -264,7 +265,9 @@ class PhpExtractor extends AbstractFileExtractor implements ExtractorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @param string|array $directory
+     *
+     * @return array
      */
     protected function extractFromDirectory($directory)
     {

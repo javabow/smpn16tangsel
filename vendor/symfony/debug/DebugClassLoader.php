@@ -13,8 +13,6 @@ namespace Symfony\Component\Debug;
 
 use PHPUnit\Framework\MockObject\Matcher\StatelessInvocation;
 
-@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', DebugClassLoader::class, \Symfony\Component\ErrorHandler\DebugClassLoader::class), E_USER_DEPRECATED);
-
 /**
  * Autoloader checking if the class is really defined in the file found.
  *
@@ -26,8 +24,6 @@ use PHPUnit\Framework\MockObject\Matcher\StatelessInvocation;
  * @author Christophe Coevoet <stof@notk.org>
  * @author Nicolas Grekas <p@tchwork.com>
  * @author Guilhem Niot <guilhem.niot@gmail.com>
- *
- * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\DebugClassLoader instead.
  */
 class DebugClassLoader
 {
@@ -157,11 +153,11 @@ class DebugClassLoader
                 if (!$file = $this->classLoader[0]->findFile($class) ?: false) {
                     // no-op
                 } elseif (\function_exists('opcache_is_script_cached') && @opcache_is_script_cached($file)) {
-                    include $file;
+                    require $file;
 
                     return;
-                } elseif (false === include $file) {
-                    return;
+                } else {
+                    require $file;
                 }
             } else {
                 ($this->classLoader)($class);
@@ -174,7 +170,7 @@ class DebugClassLoader
         $this->checkClass($class, $file);
     }
 
-    private function checkClass(string $class, string $file = null)
+    private function checkClass($class, $file = null)
     {
         $exists = null === $file || class_exists($class, false) || interface_exists($class, false) || trait_exists($class, false);
 
@@ -262,7 +258,7 @@ class DebugClassLoader
         }
 
         $parent = get_parent_class($class);
-        $parentAndOwnInterfaces = $this->getOwnInterfaces($class, $parent ?: null);
+        $parentAndOwnInterfaces = $this->getOwnInterfaces($class, $parent);
         if ($parent) {
             $parentAndOwnInterfaces[$parent] = $parent;
 
@@ -399,12 +395,6 @@ class DebugClassLoader
         return $deprecations;
     }
 
-    /**
-     * @param string $file
-     * @param string $class
-     *
-     * @return array|null
-     */
     public function checkCase(\ReflectionClass $refl, $file, $class)
     {
         $real = explode('\\', $class.strrchr($file, '.'));
@@ -421,7 +411,7 @@ class DebugClassLoader
         array_splice($tail, 0, $i + 1);
 
         if (!$tail) {
-            return null;
+            return;
         }
 
         $tail = \DIRECTORY_SEPARATOR.implode(\DIRECTORY_SEPARATOR, $tail);
@@ -437,14 +427,12 @@ class DebugClassLoader
         ) {
             return [substr($tail, -$tailLen + 1), substr($real, -$tailLen + 1), substr($real, 0, -$tailLen + 1)];
         }
-
-        return null;
     }
 
     /**
      * `realpath` on MacOSX doesn't normalize the case of characters.
      */
-    private function darwinRealpath(string $real): string
+    private function darwinRealpath($real)
     {
         $i = 1 + strrpos($real, '/');
         $file = substr($real, $i);
@@ -459,11 +447,7 @@ class DebugClassLoader
                 $real = self::$darwinCache[$kDir][0];
             } else {
                 $dir = getcwd();
-
-                if (!@chdir($real)) {
-                    return $real.$file;
-                }
-
+                chdir($real);
                 $real = getcwd().'/';
                 chdir($dir);
 
@@ -490,7 +474,7 @@ class DebugClassLoader
         }
 
         if (isset($dirFiles[$file])) {
-            return $real.$dirFiles[$file];
+            return $real .= $dirFiles[$file];
         }
 
         $kFile = strtolower($file);
@@ -509,15 +493,18 @@ class DebugClassLoader
             self::$darwinCache[$kDir][1] = $dirFiles;
         }
 
-        return $real.$dirFiles[$kFile];
+        return $real .= $dirFiles[$kFile];
     }
 
     /**
      * `class_implements` includes interfaces from the parents so we have to manually exclude them.
      *
+     * @param string       $class
+     * @param string|false $parent
+     *
      * @return string[]
      */
-    private function getOwnInterfaces(string $class, ?string $parent): array
+    private function getOwnInterfaces($class, $parent)
     {
         $ownInterfaces = class_implements($class, false);
 

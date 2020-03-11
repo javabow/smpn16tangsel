@@ -1,2 +1,0 @@
-sass --watch /srv/http/iparkir/resources/sass/$1.scss /srv/http/iparkir/public/css/$1.css
-

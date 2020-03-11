@@ -19,12 +19,11 @@
  * - Murat Yüksel
  * - Baran Şengül
  * - Selami (selamialtin)
- * - TeomanBey
  */
 return [
     'year' => ':count yıl',
     'a_year' => '{1}bir yıl|]1,Inf[:count yıl',
-    'y' => ':county',
+    'y' => ':countyıl',
     'month' => ':count ay',
     'a_month' => '{1}bir ay|]1,Inf[:count ay',
     'm' => ':countay',

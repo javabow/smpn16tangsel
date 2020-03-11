@@ -16,7 +16,7 @@ use Symfony\Contracts\EventDispatcher\Event as ContractsEvent;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
 
 /**
- * A helper class to provide BC/FC with the legacy signature of EventDispatcherInterface::dispatch().
+ * An helper class to provide BC/FC with the legacy signature of EventDispatcherInterface::dispatch().
  *
  * This class should be deprecated in Symfony 5.1
  *
@@ -50,8 +50,6 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
      * {@inheritdoc}
      *
      * @param string|null $eventName
-     *
-     * @return object
      */
     public function dispatch($event/*, string $eventName = null*/)
     {
@@ -59,13 +57,15 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
 
         if (\is_object($event)) {
             $eventName = $eventName ?? \get_class($event);
-        } elseif (\is_string($event) && (null === $eventName || $eventName instanceof ContractsEvent || $eventName instanceof Event)) {
-            @trigger_error(sprintf('Calling the "%s::dispatch()" method with the event name as the first argument is deprecated since Symfony 4.3, pass it as the second argument and provide the event object as the first argument instead.', ContractsEventDispatcherInterface::class), E_USER_DEPRECATED);
+        } else {
+            @trigger_error(sprintf('Calling the "%s::dispatch()" method with the event name as first argument is deprecated since Symfony 4.3, pass it second and provide the event object first instead.', ContractsEventDispatcherInterface::class), E_USER_DEPRECATED);
             $swap = $event;
             $event = $eventName ?? new Event();
             $eventName = $swap;
-        } else {
-            throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an object, %s given.', ContractsEventDispatcherInterface::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+
+            if (!$event instanceof Event) {
+                throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an instance of %s, %s given.', ContractsEventDispatcherInterface::class, Event::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+            }
         }
 
         $listeners = $this->getListeners($eventName);
@@ -116,7 +116,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function getListeners($eventName = null): array
+    public function getListeners($eventName = null)
     {
         return $this->dispatcher->getListeners($eventName);
     }
@@ -124,7 +124,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function getListenerPriority($eventName, $listener): ?int
+    public function getListenerPriority($eventName, $listener)
     {
         return $this->dispatcher->getListenerPriority($eventName, $listener);
     }
@@ -132,7 +132,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-    public function hasListeners($eventName = null): bool
+    public function hasListeners($eventName = null)
     {
         return $this->dispatcher->hasListeners($eventName);
     }
