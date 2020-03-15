@@ -36,8 +36,10 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Web font -->
         <!--begin::Base Styles -->
 
+		<link href="{{asset('web_assets/css/style.css')}}" rel="stylesheet">
 		<link href="{{ asset('adm/vendors/base/vendors.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ asset('adm/demo/demo3/base/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="{{asset('web_assets/css/flaticon-set.css')}}" rel="stylesheet">
 		<link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 		@yield('css')
@@ -87,65 +89,6 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-topbar__nav-wrapper">
 									<ul class="m-topbar__nav m-nav m-nav--inline">
-										<li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width notif-wrapper" data-dropdown-toggle="click" data-dropdown-persistent="true">
-											<a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
-												<span class="m-nav__link-badge m-badge m-badge--accent">
-													0
-												</span>
-												<span class="m-nav__link-icon">
-													<i class="flaticon-alert-2"></i>
-												</span>
-											</a>
-											<div class="m-dropdown__wrapper">
-												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
-												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url('{{ asset('img/notification_bg.jpg') }}'); background-size: cover;">
-														<span class="m-dropdown__header-title">
-															0
-														</span>
-														<span class="m-dropdown__header-subtitle">
-															User Notifications
-														</span>
-													</div>
-													<div class="m-dropdown__body">
-														<div class="m-dropdown__content">
-															<ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
-																<li class="nav-item m-tabs__item">
-																	<a class="nav-link m-tabs__link active" data-toggle="tab" href="#topbar_notifications_notifications" role="tab">
-																		Comments
-																	</a>
-																</li>
-															</ul>
-															<div class="tab-content">
-																<div class="tab-pane active" id="topbar_notifications_notifications" role="tabpanel">
-																	<div class="m-scrollable" data-scrollable="true" data-max-height="250" data-mobile-max-height="200">
-																		<div class="m-list-timeline m-list-timeline--skin-light">
-																			<div class="m-list-timeline__items">
-																				{{-- @foreach (session('notif') as $key => $value)
-																				<a href="{{ url('admin/comments') }}/{{ $value->data->id_comment }}?id_notif={!! $value->id !!}">
-																					<div class="m-list-timeline__item {{ ($value->read_at) ? 'notif-commented' :  'notif-comment'}}">
-																						<span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
-																							<span class="m-list-timeline__text">
-																								{!! $value->data->notif !!} <br>
-																								{{ Str::limit($value->data->comment, 20) }}
-																							</span>
-																							<span class="m-list-timeline__time">
-																								{{ $value->updated_at }}
-																							</span>
-																					</div>
-																				</a>
-																				@endforeach --}}
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-
-										</li>
 										<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" data-dropdown-toggle="click" data-dropdown-persistent="true" id="m_quicksearch" data-search-type="dropdown">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-nav__link-icon">
@@ -280,7 +223,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<li class="m-menu__item " aria-haspopup="true" >
 								<a  href="{{ url('admin/contacts') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
-									<i class="m-menu__link-icon flaticon-profile-1"></i>
+									<i class="m-menu__link-icon flaticon-book-1"></i>
 									<span class="m-menu__link-text">
 										Contacts
 									</span>
@@ -289,7 +232,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<li class="m-menu__item " aria-haspopup="true" >
 								<a  href="{{ url('admin/users') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
-									<i class="m-menu__link-icon flaticon-users"></i>
+									<i class="m-menu__link-icon flaticon-manager"></i>
 									<span class="m-menu__link-text">
 										Users
 									</span>
@@ -393,9 +336,9 @@ License: You must have a valid license purchased only from themeforest(the above
 							</li>
 
 							<li class="m-menu__item " aria-haspopup="true" >
-								<a  href="{{ url('admin/tags') }}" class="m-menu__link ">
+								<a  href="{{ url('admin/ekstrakurikuler') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
-									<i class="m-menu__link-icon flaticon-puzzle "></i>
+									<i class="m-menu__link-icon flaticon-training "></i>
 									<span class="m-menu__link-text">
 										Ekstrakurikuler
 									</span>
@@ -405,7 +348,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<li class="m-menu__item " aria-haspopup="true" >
 								<a  href="{{ url('admin/alumni') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
-									<i class="m-menu__link-icon flaticon-profile-1 "></i>
+									<i class="m-menu__link-icon flaticon-professor"></i>
 									<span class="m-menu__link-text">
 										Profil Alumni
 									</span>

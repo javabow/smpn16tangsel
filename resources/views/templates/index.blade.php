@@ -323,6 +323,16 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-md-3 col-sm-6 equal-height">
+                        <div class="item java" style="background-image: url(images/800x600.png);">
+                            <a href="#">
+                                <i class="flaticon-conveyor"></i>
+                                <div class="info">
+                                    <h4>Teladan Robotic Team</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

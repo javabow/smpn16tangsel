@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
           'username' => 'admin',
           'email' => 'admin@smpn16tangsel.sch.id',
           'password' => bcrypt('$admin123#'),
-          'dp' => 'img/profil-pic_dummy.png',
+          'dp' => '/img/profil-pic_dummy.png',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
           'id_user_roles' => '1'
@@ -84,7 +84,7 @@ class DatabaseSeeder extends Seeder
           'username' => 'lingling',
           'email' => 'lingling@gmail.com',
           'password' => bcrypt('lingling'),
-          'dp' => 'img/profil-pic_dummy.png',
+          'dp' => '/img/profil-pic_dummy.png',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),
           'id_user_roles' => '1'
@@ -387,5 +387,68 @@ class DatabaseSeeder extends Seeder
           ]);
         }
 
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Pleton Inti (TONTI)',
+          'icon' => 'flaticon-manager',
+          'color' => 'mariner',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Palang Merah Remaja',
+          'icon' => 'flaticon-medal',
+          'color' => 'java',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Olimpiade Sains',
+          'icon' => 'flaticon-training',
+          'color' => 'malachite',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Karya Ilmiah Remaja (TSC)',
+          'icon' => 'flaticon-reading',
+          'color' => 'emerald',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Ensambel (TSO)',
+          'icon' => 'flaticon-teacher-lecture-in-front-an-auditory',
+          'color' => 'casablanca',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Sinematografi',
+          'icon' => 'flaticon-software',
+          'color' => 'brilliantrose',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Pecinta Alam (THA)',
+          'icon' => 'flaticon-education',
+          'color' => 'cinnabar',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('ekstrakurikuler')->insert([
+          'name' => 'Teladan Robotic Team',
+          'icon' => 'flaticon-conveyor',
+          'color' => 'plum',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
     }
 }

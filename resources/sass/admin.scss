@@ -28,3 +28,24 @@
 .m-widget4 .m-widget4__item .m-widget4__img.m-widget4__img--logo img {
   height: 3.5rem;
 }
+.icon-list-container {
+  padding: 1rem;
+  .icon-list {
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .icon-list:hover {
+    color: #000;
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+label {
+  font-weight: 800;
+}
+.vertical-align-middle {
+  vertical-align: middle;
+}
