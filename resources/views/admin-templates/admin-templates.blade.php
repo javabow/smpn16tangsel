@@ -62,7 +62,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-stack__item--center m-brand__logo p-2">
 									<a class="display-4" href="{{ url('') }}" class="m-brand__logo-wrapper">
-										<img class="img-fluid" style="width: 50px; margin-bottom: 20px;" alt="" src="{{ asset('img/logo.png') }}"/>
+										<img class="img-fluid logo-admin-page" alt="" src="{{ asset('img/logo-smp-16.png') }}"/>
 										{{-- ADM --}}
 									</a>
 								</div>

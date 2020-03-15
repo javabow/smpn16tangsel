@@ -49,4 +49,19 @@ label {
   vertical-align: middle;
 }
 
+.m-brand {
+  height: unset !important;
+}
+
+.logo-admin-page {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+  .m-brand {
+    height: unset !important;
+  }
+}
+
 /*# sourceMappingURL=admin.css.map */
