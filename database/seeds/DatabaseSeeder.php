@@ -206,7 +206,7 @@ class DatabaseSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
           ]);
-          
+
         for ($i=1; $i <= 7; $i++) {
           DB::table('posts')->insert([
             'id' => $i,
@@ -319,5 +319,73 @@ class DatabaseSeeder extends Seeder
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s')
         ]);
+
+        DB::table('staff_position')->insert([
+          'id' => 1,
+          'name' => 'Kepala Sekolah',
+          'name_en' => 'Headmaster',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('staff_position')->insert([
+          'id' => 2,
+          'name' => 'Tenaga Pendidik',
+          'name_en' => 'Teacher',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('staff_position')->insert([
+          'id' => 3,
+          'name' => 'Tenaga Kependidikan',
+          'name_en' => 'Educational Staff',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('staff_position')->insert([
+          'id' => 4,
+          'name' => 'Alumni',
+          'name_en' => 'Alumni',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        DB::table('staff')->insert([
+          'name' => 'Yuliani Silaturochmi MPd',
+          'id_staff_position' => '1',
+          'created_at' => date('Y-m-d H:i:s'),
+          'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        $subjects = ['Matematika', 'Bahasa Indonesia', 'IPA', 'Pendidikan Jasmani', 'Bahasa Inggris', 'IPS'];
+        for ($i=0; $i < 6; $i++) {
+          DB::table('staff')->insert([
+            'name' => 'Teacher '. $i,
+            'subjects' => $subjects[$i],
+            'id_staff_position' => '2',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+          ]);
+        }
+        for ($i=0; $i < 6; $i++) {
+          DB::table('staff')->insert([
+            'name' => 'Staff '. $i,
+            'id_staff_position' => '3',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+          ]);
+        }
+
+        for ($i=0; $i < 6; $i++) {
+          DB::table('staff')->insert([
+            'name' => 'Alumni '. $i,
+            'id_staff_position' => '4',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+          ]);
+        }
+
     }
 }

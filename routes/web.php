@@ -78,6 +78,10 @@ Route::group( ['middleware' => 'checkuserrole'], function()
   Route::resource('/admin/sejarah', 'Admin\SejarahController');
   Route::resource('/admin/kata-sambutan', 'Admin\KataSambutanController');
   Route::resource('/admin/visi-misi', 'Admin\VisiMisiController');
+
+  Route::resource('/admin/tenaga-pendidik', 'Admin\TenagaPendidikController');
+  Route::resource('/admin/tenaga-kependidikan', 'Admin\TenagaKependidikanController');
+  Route::resource('/admin/alumni', 'Admin\AlumniController');
 });
 
 Route::group(['middleware' => ['auth', '\UniSharp\LaravelFilemanager\Middlewares\MultiUser', '\UniSharp\LaravelFilemanager\Middlewares\CreateDefaultFolder']], function() {

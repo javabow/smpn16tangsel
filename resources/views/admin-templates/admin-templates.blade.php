@@ -370,7 +370,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</a>
 										</li><li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-											<a  href="{{ url('laravel-filemanager?type=images') }}" class="m-menu__link ">
+											<a  href="{{ url('admin/tenaga-pendidik') }}" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--line">
 													<span></span>
 												</i>
@@ -379,7 +379,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</a>
 										</li><li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-											<a  href="{{ url('laravel-filemanager?type=images') }}" class="m-menu__link ">
+											<a  href="{{ url('admin/tenaga-kependidikan') }}" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--line">
 													<span></span>
 												</i>
@@ -403,7 +403,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							</li>
 
 							<li class="m-menu__item " aria-haspopup="true" >
-								<a  href="{{ url('admin/tags') }}" class="m-menu__link ">
+								<a  href="{{ url('admin/alumni') }}" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
 									<i class="m-menu__link-icon flaticon-profile-1 "></i>
 									<span class="m-menu__link-text">
