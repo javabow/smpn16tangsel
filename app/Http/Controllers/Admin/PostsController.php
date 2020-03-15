@@ -256,6 +256,7 @@ class PostsController extends Controller
 
         if ($request->input('submit') == 'draft') {
           $this->updateSaveDraft($request, $id);
+          return redirect()->back()->with('success', 'Posts berhasil disave');
         } else {
           try {
             $request->merge(['id_post_status'=>'1']);

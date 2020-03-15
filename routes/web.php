@@ -75,7 +75,9 @@ Route::group( ['middleware' => 'checkuserrole'], function()
   Route::get('/admin/dashboard/edit-sticky-note', 'Admin\DashboardController@editStickyNote');
   Route::patch('/admin/dashboard/update-sticky-note', 'Admin\DashboardController@updateStickyNote');
 
-
+  Route::resource('/admin/sejarah', 'Admin\SejarahController');
+  Route::resource('/admin/kata-sambutan', 'Admin\KataSambutanController');
+  Route::resource('/admin/visi-misi', 'Admin\VisiMisiController');
 });
 
 Route::group(['middleware' => ['auth', '\UniSharp\LaravelFilemanager\Middlewares\MultiUser', '\UniSharp\LaravelFilemanager\Middlewares\CreateDefaultFolder']], function() {

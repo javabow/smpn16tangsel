@@ -28,6 +28,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\DashboardController' => $baseDir . '/app/Http/Controllers/Admin/DashboardController.php',
     'App\\Http\\Controllers\\Admin\\FileManagerController' => $baseDir . '/app/Http/Controllers/Admin/FileManagerController.php',
     'App\\Http\\Controllers\\Admin\\PostsController' => $baseDir . '/app/Http/Controllers/Admin/PostsController.php',
+    'App\\Http\\Controllers\\Admin\\SejarahController' => $baseDir . '/app/Http/Controllers/Admin/SejarahController.php',
     'App\\Http\\Controllers\\Admin\\TagsController' => $baseDir . '/app/Http/Controllers/Admin/TagsController.php',
     'App\\Http\\Controllers\\Admin\\UploadFilesController' => $baseDir . '/app/Http/Controllers/Admin/UploadFilesController.php',
     'App\\Http\\Controllers\\Admin\\UsersController' => $baseDir . '/app/Http/Controllers/Admin/UsersController.php',

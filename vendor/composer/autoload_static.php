@@ -502,6 +502,7 @@ class ComposerStaticInitc68337e5d444110e39c640339efad86a
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
         'App\\Http\\Controllers\\Admin\\FileManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FileManagerController.php',
         'App\\Http\\Controllers\\Admin\\PostsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostsController.php',
+        'App\\Http\\Controllers\\Admin\\SejarahController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SejarahController.php',
         'App\\Http\\Controllers\\Admin\\TagsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TagsController.php',
         'App\\Http\\Controllers\\Admin\\UploadFilesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UploadFilesController.php',
         'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',

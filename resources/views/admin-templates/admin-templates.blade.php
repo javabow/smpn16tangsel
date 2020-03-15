@@ -343,7 +343,16 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-											<a  href="{{ url('laravel-filemanager?type=files') }}" class="m-menu__link ">
+											<a  href="{{ url('admin/kata-sambutan') }}" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--line">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Kata Sambutan
+												</span>
+											</a>
+										</li><li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
+											<a  href="{{ url('admin/sejarah') }}" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--line">
 													<span></span>
 												</i>
@@ -352,7 +361,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</a>
 										</li><li class="m-menu__item " aria-haspopup="true"  data-redirect="true">
-											<a  href="{{ url('laravel-filemanager?type=images') }}" class="m-menu__link ">
+											<a  href="{{ url('admin/visi-misi') }}" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--line">
 													<span></span>
 												</i>

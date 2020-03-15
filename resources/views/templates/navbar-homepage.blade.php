@@ -14,7 +14,10 @@
                 </button>
                 <a class="navbar-brand" href="#">
                     <img src="img/logo.png" class="logo logo-display img-fluid img-responsive" alt="Logo">
-                    <img src="img/logo.png" style="width: 50px;" class="logo logo-scrolled img-responsive" alt="Logo">
+                    <div class="scroll-container">
+                      <img src="img/logo.png" class="logo logo-scrolled img-responsive" alt="Logo">
+                      <span>SMPN 16 Tangerang Selatan</span>
+                    </div>
                 </a>
             </div>
             <!-- End Header Navigation -->
