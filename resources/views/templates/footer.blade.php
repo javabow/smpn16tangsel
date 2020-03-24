@@ -30,22 +30,22 @@
                         <div class="f-item recent-post">
                             <h4>Info Sekolah</h4>
                             <ul>
-                              @for ($i=0; $i < 2; $i++)
+                              @foreach ($footerInfoSekolah as $key => $value)
                                 <li>
                                   <div class="thumb">
-                                    <a href="#">
-                                      <img class="img-responsive" src="{{asset('web_assets/images/f22266e69ce7b0ddbd644284b8433088-100x100.jpeg')}}"  alt="Thumb">
+                                    <a href="{{ url('detil-berita/'.$value->id) }}">
+                                      <img class="img-responsive" src="{{ asset($value->thumbnail) }}"  alt="Thumb">
                                     </a>
                                   </div>
                                   <div class="info">
-                                    <a href="#">Info Berita Sekolah</a>
+                                    <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
                                     <div class="meta-title">
-                                      <span class="post-date">05 Oct, 2019</span>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                                      <span class="post-date">{{ MyHelpers::getCustomDate3($value->updated_at) }}</span>
+                                      <p>{!! strip_tags(str_limit($value->content, 200)) !!}</p>
                                     </div>
                                   </div>
                                 </li>
-                              @endfor
+                              @endforeach
                             </ul>
                         </div>
                     </div>
@@ -53,20 +53,22 @@
                         <div class="f-item recent-post">
                             <h4>Agenda Sekolah</h4>
                             <ul>
-                              <li>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img class="img-responsive" src="{{asset('web_assets/images/6c1da5caa5caf36956b66a1aa6c5c928-100x100.jpg')}}"  alt="Thumb">
+                              @foreach ($footerAgendaSekolah as $key => $value)
+                                <li>
+                                  <div class="thumb">
+                                    <a href="{{ url('detil-berita/'.$value->id) }}">
+                                      <img class="img-responsive" src="{{ asset($value->thumbnail) }}"  alt="Thumb">
                                     </a>
-                                </div>
-                                <div class="info">
-                                    <a href="#">Berita Agenda Sekolah</a>
+                                  </div>
+                                  <div class="info">
+                                    <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
                                     <div class="meta-title">
-                                        <span class="post-date">13 May, 2019</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                                      <span class="post-date">{{ MyHelpers::getCustomDate3($value->updated_at) }}</span>
+                                      <p>{!! strip_tags(str_limit($value->content, 200)) !!}</p>
                                     </div>
-                                </div>
-                            </li>
+                                  </div>
+                                </li>
+                              @endforeach
                           </ul>
                         </div>
                     </div>
@@ -79,7 +81,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-6">
-                            <p>&copy; Copyright 2020. All Rights Reserved by <a href="#">SMPN 16 Tangerang Selatan</a></p>
+                            <p>&copy; Copyright 2020. All Rights Reserved by <a href="{{ url('') }}">SMPN 16 Tangerang Selatan</a></p>
                         </div>
                         <div class="col-md-6 text-right link">
                             <ul>

@@ -1,3 +1,7 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .logo-display, .logo-scrolled {
   width: 4em;
 }

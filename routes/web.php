@@ -25,6 +25,7 @@ Route::get('/visi-misi', 'VisiMisiController@index');
 //     return view('berita-terbaru');
 // });
 Route::get('/berita/{category?}/{tag?}', 'BeritaController@index');
+Route::get('/detil-berita/{id}', 'DetilBeritaController@index');
 
 
 Auth::routes();

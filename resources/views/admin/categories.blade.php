@@ -8,7 +8,7 @@
 @section('content')
   <div id="content-cont" class="container bg-light p-4">
     @include('admin-templates.alert-box')
-    <p><a class="btn btn-info" href="#" data-toggle="modal" data-target="#addModal">Add Tag<i class="fas fa-plus ml-2"></i></a></p>
+    <p><a class="btn btn-info" href="#" data-toggle="modal" data-target="#addModal">Add Category<i class="fas fa-plus ml-2"></i></a></p>
     <table class="display myTable" style="width:100%">
       <thead>
         <tr>

@@ -63,17 +63,17 @@
                     <div class="single-item">
                       <div class="item">
                         <div class="thumb">
-                          <a href="#"><img onerror="this.onerror=null; this.src='{{ asset('img/dummy-img.png') }}'" src="{{ asset($value->thumbnail) }}" style="width: 100%" alt="Thumb"></a>
+                          <a href="{{ url('detil-berita/'.$value->id) }}"><img onerror="this.onerror=null; this.src='{{ asset('img/dummy-img.png') }}'" src="{{ asset($value->thumbnail) }}" style="width: 100%" alt="Thumb"></a>
                           <div class="date">
                             {{ MyHelpers::getCustomDate($value->updated_at) }}
                           </div>
                         </div>
                         <div class="info">
                           <h3>
-                            <a href="#">{{$value->title}}</a>
+                            <a href="{{ url('detil-berita/'.$value->id) }}">{{$value->title}}</a>
                           </h3>
                           <p>{!! strip_tags(str_limit($value->content, 400)) !!}</p>
-                          <a href="#">Read More <i class="fas fa-angle-double-right"></i></a>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">Read More <i class="fas fa-angle-double-right"></i></a>
                           <div class="meta">
                             <ul>
                               <li>

@@ -12,6 +12,16 @@ class MyHelpers
   {
     echo '<h4><span>'.date('d', strtotime($waktu)).'</span>'.date('M, Y', strtotime($waktu)).'</h4>';
   }
+
+  public static function getCustomDate2($waktu='')
+  {
+    echo date('d F Y', strtotime($waktu));
+  }
+
+  public static function getCustomDate3($waktu='')
+  {
+    echo date('d M, Y', strtotime($waktu));
+  }
 }
 
  ?>

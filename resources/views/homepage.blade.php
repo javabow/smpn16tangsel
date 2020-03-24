@@ -74,17 +74,16 @@
                   <div class="col-md-4 single-item">
                     <div class="item">
                       <div class="thumb">
-                        <a href="#"><img class="img img-responsive img-fluid" src="{{asset($value->thumbnail)}}"  alt="Thumb"></a>
+                        <a href="{{ url('detil-berita/'.$value->id) }}"><img class="img img-responsive img-fluid" src="{{asset($value->thumbnail)}}"  alt="Thumb"></a>
                         <div class="date">
-                          <h4><span>14</span>Aug, 2019</h4>
+                          {{ MyHelpers::getCustomDate($value->updated_at) }}
                         </div>
                       </div>
                       <div class="info">
                         <h4>
-                          <a href="#">{{ $value->title }}</a>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
                         </h4>
-                        <p class="text-justify">{{ strip_tags(str_limit($value->content, 400)) }}...</p>
-                        <a href="#"></i></a>
+                        <p class="text-justify">{!! strip_tags(str_limit($value->content, 400)) !!}</p>
                         <div class="meta">
                           <ul>
                             <li>
@@ -105,7 +104,7 @@
 
 
                 <div class="more-btn col-md-12 text-center">
-                  <a href="#">Tampilkan Semua Berita</a>
+                  <a href="{{ url('berita') }}">Tampilkan Semua Berita</a>
                 </div>
               </div>
             </div>
@@ -161,71 +160,30 @@
 
             <div class="row">
                 <div class="event-items">
-                                        <!-- Single Item -->
-                     <div class="item horizontal col-md-12">
-                        <div class="col-md-6 thumb bg-cover" style="background-image: url('{{asset('img/tes2.jpg')}}');">
-                            <!-- <div class="date">
-                                <h4><span>12</span> Dec, 2018</h4>
-                            </div> -->
+                  @foreach ($prestasiTerbaru as $key => $value)
+                    <div class="item horizontal col-md-12">
+                      {{-- <img onerror="this.onerror=null; this.src='{{ asset('img/dummy-img.png') }}'" src="{{ asset($value->thumbnail) }}" style="width: 100%" alt="Thumb"> --}}
+                      <div class="col-md-6 thumb bg-cover cursor-pointer" style="background-image: url('{{asset($value->thumbnail)}}'), url('{{asset('img/dummy-img.png')}}');" onclick="window.location.href='{{ url('detil-berita/'.$value->id) }}'">
+                        <div class="date">
+                          {{ MyHelpers::getCustomDate($value->updated_at) }}
                         </div>
-                        <div class="col-md-6 info">
-                            <h4>
-                                <a>This is The Title</a>
-                            </h4>
-                            <div class="meta">
-                                <ul>
-                                    <li><i class="fas fa-calendar-alt"></i>04 Aug, 2019 - 11 Aug, 2019</li>
-                                    <li><i class="fas fa-map"></i> Tangerang Selatan, Indonesia </li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ..</p>
+                      </div>
+                      <div class="col-md-6 info">
+                        <h4>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
+                        </h4>
+                        <div class="meta">
+                          <ul>
+                            <li><i class="fas fa-calendar-alt"></i>{{ MyHelpers::getCustomDate3($value->updated_at) }}</li>
+                          </ul>
                         </div>
+                        <p>{!! strip_tags(str_limit($value->content, 400)) !!}</p>
+                      </div>
                     </div>
-                                        <!-- Single Item -->
-                     <div class="item horizontal col-md-12">
-                        <div class="col-md-6 thumb bg-cover" style="background-image: url('{{asset('img/tes2.jpg')}}');">
-                            <!-- <div class="date">
-                                <h4><span>12</span> Dec, 2018</h4>
-                            </div> -->
-                        </div>
-                        <div class="col-md-6 info">
-                            <h4>
-                              <a>This is The Title</a>
-                            </h4>
-                            <div class="meta">
-                                <ul>
-                                    <li><i class="fas fa-calendar-alt"></i>01 Apr, 2019 - 08 Apr, 2019</li>
-                                    <li><i class="fas fa-map"></i> Tangerang Selatan, Indonesia </li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ..</p>
-
-                        </div>
-                    </div>
-                                        <!-- Single Item -->
-                     <div class="item horizontal col-md-12">
-                        <div class="col-md-6 thumb bg-cover" style="background-image: url('{{asset('img/tes2.jpg')}}');">
-                            <!-- <div class="date">
-                                <h4><span>12</span> Dec, 2018</h4>
-                            </div> -->
-                        </div>
-                        <div class="col-md-6 info">
-                            <h4>
-                              <a>This is The Title</a>
-                            </h4>
-                            <div class="meta">
-                                <ul>
-                                    <li><i class="fas fa-calendar-alt"></i>22 Mar, 2019 - 23 Mar, 2019</li>
-                                    <li><i class="fas fa-map"></i> Tangerang Selatan, Indonesia </li>
-                                </ul>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ..</p>
-
-                        </div>
-                    </div>
+                  @endforeach
 
                     <div class="more-btn col-md-12 text-center">
-                        <a href="#">Tampilkan semua prestasi</a>
+                        <a href="{{ url('berita/3') }}">Tampilkan semua prestasi</a>
                     </div>
 
                 </div>
