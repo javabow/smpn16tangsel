@@ -13,19 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'HomepageController@index');
 Route::get('/set-lang/{lang}', 'LangController@lang');
 
 
-Route::get('/kata-sambutan', function () {
-    return view('kata-sambutan');
-});
+Route::get('/kata-sambutan', 'KataSambutanController@index');
+Route::get('/sejarah-sekolah', 'SejarahSekolahController@index');
+Route::get('/visi-misi', 'VisiMisiController@index');
 
-Route::get('/berita-terbaru', function () {
-    return view('berita-terbaru');
-});
+// Route::get('/berita-terbaru', function () {
+//     return view('berita-terbaru');
+// });
+Route::get('/berita/{category?}/{tag?}', 'BeritaController@index');
+
 
 Auth::routes();
 

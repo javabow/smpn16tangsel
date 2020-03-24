@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AdminModel\Menus;
+use App\AdminModel\Categories;
+use App\AdminModel\Tags;
+
 class MyController extends Controller
 {
     //
-    private $data;
-    
+    protected $data;
     public function __construct()
     {
-      $this->data['menus'] = Menus::where('id_pages', '1')->get();
-      return $this->data;
+      $this->data['categories'] = Categories::all();
+      $this->data['tags'] = Tags::all();
     }
 
 }

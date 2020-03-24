@@ -2,6 +2,12 @@
   width: 4em;
 }
 
+.blog-area .sidebar .sidebar-item.category li a.active, .blog-area .sidebar .sidebar-item.archives li a.active {
+  color: #2d8fcb;
+  border-color: #007bff;
+  font-weight: 800;
+}
+
 header .carousel-inner {
   height: 75vh;
 }
@@ -47,6 +53,10 @@ header .carousel-inner .carousel-caption {
 }
 nav.navbar.bootsnav.navbar-fixed {
   transition-duration: 0.3s;
+}
+
+.pagination-berita li.page-item {
+  font-size: 1.5em;
 }
 
 #loading-wrapper {

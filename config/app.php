@@ -136,6 +136,8 @@ return [
 
     'providers' => [
 
+        // MyHelpers
+        App\Providers\MyHelpersProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -178,6 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 
@@ -231,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'MyHelpers' => App\Helpers\MyHelpers::class,
     ],
 
 ];

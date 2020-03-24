@@ -1,6 +1,6 @@
 @extends('templates.pages-templates')
 @section('title')
-  {{ $kataSambutan->title }}
+  {{ $visimisi->title }}
 @endsection
 @section('content')
   <div class="blog-area full-blog standard single-blog full-blog padding-page">
@@ -11,14 +11,14 @@
                       <br>
                       <ul class="breadcrumb">
                           <li><a href="{{url('/')}}"><i class="fas fa-home"></i> Home</a></li>
-                          <li class="active">{{ $kataSambutan->title }}</li>
+                          <li class="active">{{ $visimisi->title }}</li>
                       </ul>
                   </div>
                   <div class="blog-content col-md-10 col-md-offset-1">
                       <div class="item-box">
                           <div class="item">
                               <div class="thumb">
-                                      <a href="#"><img class="img-responsive" width="100%" src="{{asset($kataSambutan->thumbnail)}}" alt="Thumb"></a>
+                                      <a href="#"><img class="img-responsive" width="100%" src="{{asset($visimisi->thumbnail)}}" alt="Thumb"></a>
                                                               </div>
                               <div class="info">
                                   <div class="meta">
@@ -44,7 +44,7 @@
                                       </div>
                                   </div>
                                   <div class="content text-justify">
-                                    {!! $kataSambutan->content !!}
+                                    {!! $visimisi->content !!}
                                   </div>
                               </div>
 
