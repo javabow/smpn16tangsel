@@ -2,6 +2,14 @@
   cursor: pointer;
 }
 
+nav.navbar.bootsnav.navbar-fixed {
+  z-index: 1001;
+}
+
+.navbar-container {
+  padding-right: 50px;
+}
+
 .logo-display, .logo-scrolled {
   width: 4em;
 }
@@ -27,7 +35,7 @@ header .carousel-inner .carousel-caption {
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .scroll-container span {
   display: none;
@@ -61,6 +69,47 @@ nav.navbar.bootsnav.navbar-fixed {
 
 .pagination-berita li.page-item {
   font-size: 1.5em;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+  border-bottom-color: #dee2e6;
+}
+
+.table td, .table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+  border-top-color: #dee2e6;
+}
+
+th {
+  text-align: inherit;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0dcf4;
 }
 
 #loading-wrapper {

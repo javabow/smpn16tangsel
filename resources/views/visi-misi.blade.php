@@ -1,6 +1,6 @@
 @extends('templates.pages-templates')
 @section('title')
-  {{ $visimisi->title }}
+  {{ $visimisi->{'title'.Session::get('lang')} }}
 @endsection
 @section('content')
   <div class="blog-area full-blog standard single-blog full-blog padding-page">
@@ -11,7 +11,7 @@
                       <br>
                       <ul class="breadcrumb">
                           <li><a href="{{url('/')}}"><i class="fas fa-home"></i> Home</a></li>
-                          <li class="active">{{ $visimisi->title }}</li>
+                          <li class="active">{{ $visimisi->{'title'.Session::get('lang')} }}</li>
                       </ul>
                   </div>
                   <div class="blog-content col-md-10 col-md-offset-1">
@@ -44,7 +44,7 @@
                                       </div>
                                   </div>
                                   <div class="content text-justify">
-                                    {!! $visimisi->content !!}
+                                    {!! $visimisi->{'content'.Session::get('lang')} !!}
                                   </div>
                               </div>
 

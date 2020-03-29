@@ -1,6 +1,6 @@
 @extends('templates.pages-templates')
 @section('title')
-  {{ $berita->title }}
+  {{ $berita->{'title'.Session::get('lang')} }}
 @endsection
 @section('content')
   <div class="blog-area full-blog standard single-blog full-blog padding-page">
@@ -11,8 +11,8 @@
                       <br>
                       <ul class="breadcrumb">
                           <li><a href="{{url('/')}}"><i class="fas fa-home"></i> Home</a></li>
-                          <li>Berita</li>
-                          <li class="active">{{ $berita->title }}</li>
+                          <li>{{ $sText->{'berita'.Session::get('lang')} }}</li>
+                          <li class="active">{{ $berita->{'title'.Session::get('lang')} }}</li>
                       </ul>
                   </div>
                   <div class="blog-content col-md-10 col-md-offset-1">
@@ -30,7 +30,7 @@
                               </div> --}}
                               <div class="info">
                                   <div class="content text-justify">
-                                    {!! $berita->content !!}
+                                    {!! $berita->{'content'.Session::get('lang')} !!}
                                   </div>
                                   <div class="meta">
                                       <div class="share">

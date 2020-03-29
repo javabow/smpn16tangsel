@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomepageController@index');
-Route::get('/set-lang/{lang}', 'LangController@lang');
+Route::get('/set-lang/{lang?}', 'LangController@lang');
 
 
 Route::get('/kata-sambutan', 'KataSambutanController@index');
 Route::get('/sejarah-sekolah', 'SejarahSekolahController@index');
 Route::get('/visi-misi', 'VisiMisiController@index');
+Route::get('/tenaga-pendidik', 'TenagaPendidikController@index');
+Route::get('/tenaga-kependidikan', 'TenagaKependidikanController@index');
 
 // Route::get('/berita-terbaru', function () {
 //     return view('berita-terbaru');

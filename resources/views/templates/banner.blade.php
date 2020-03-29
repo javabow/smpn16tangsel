@@ -15,9 +15,9 @@
                             <div class="content">
                                 <h1 class="sma1">SMPN 16 Tangerang Selatan</h1>
                                 <form action="{{ url('berita') }}" method="GET">
-                                    <input type="text" placeholder="Apa yang ingin anda cari?" class="form-control" name="search">
+                                    <input type="text" placeholder="{{ $sText->{'cariApa'.Session::get('lang')} }}" class="form-control" name="search">
                                     <button type="submit">
-                                        Cari
+                                        {{ $sText->{'cari'.Session::get('lang')} }}
                                     </button>
                                 </form>
                             </div>

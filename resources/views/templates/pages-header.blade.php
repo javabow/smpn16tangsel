@@ -37,7 +37,7 @@
     <link href="{{asset('web_assets/css/css.css')}}" rel="stylesheet">
     <link href="{{asset('web_assets/css/css_2.css')}}" rel="stylesheet">
     <link href="{{asset('css/homepage.css')}}" rel="stylesheet">
-
+    @yield('css')
 </head>
 
 <body>

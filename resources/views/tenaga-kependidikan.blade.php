@@ -1,6 +1,6 @@
 @extends('templates.pages-templates')
 @section('title')
-  {{ $sejarah->{'title'.Session::get('lang')} }}
+  {{ $sText->{'tenagaKependidikan'.Session::get('lang')} }}
 @endsection
 @section('content')
   <div class="blog-area full-blog standard single-blog full-blog padding-page">
@@ -11,21 +11,17 @@
                       <br>
                       <ul class="breadcrumb">
                           <li><a href="{{url('/')}}"><i class="fas fa-home"></i> Home</a></li>
-                          <li class="active">{{ $sejarah->{'title'.Session::get('lang')} }}</li>
+                          <li class="active">{{ $sText->{'tenagaKependidikan'.Session::get('lang')} }}</li>
                       </ul>
                   </div>
                   <div class="blog-content col-md-10 col-md-offset-1">
                       <div class="item-box">
                           <div class="item">
                               <div class="thumb">
-                                      <a href="#"><img class="img-responsive" width="100%" src="{{asset($sejarah->thumbnail)}}" alt="Thumb"></a>
-                                                              </div>
+                                      {{-- <a href="#"><img class="img-responsive" width="100%" src="{{asset('')}}" alt="Thumb"></a> --}}
+                              </div>
                               <div class="info">
-                                  <div class="meta">
-                                      <ul>
-  <!--                                         <li><a href="#"><i class="fas fa-user"></i> </a></li> -->
-                                          <!-- <li><a href="#"><i class="fas fa-comments"></i> 5 Comments</a></li> -->
-                                      </ul>
+                                  {{-- <div class="meta">
                                       <div class="share">
                                           <ul>
                                             <li class="share">
@@ -42,10 +38,34 @@
                                             </li>
                                           </ul>
                                       </div>
-                                  </div>
+                                  </div> --}}
                                   <div class="content text-justify">
-                                    {!! $sejarah->{'content'.Session::get('lang')} !!}
-                                  </div>
+                                    @php
+                                      $num = 1;
+                                    @endphp
+                                    <table class="table">
+                                      <thead class="thead-dark">
+                                        <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">{{ $sText->{'nama'.Session::get('lang')} }}</th>
+                                          <th scope="col">Status</th>
+                                          {{-- <th scope="col">Matapelajaran</th> --}}
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                        @foreach ($tenagaKependidikan as $key => $value)
+                                          <tr>
+                                            <th scope="row">{{ $num++ }}</th>
+                                            <td>{{ $value->name }}</td>
+                                            <td>{{ $sText->{'tenagaKependidikan'.Session::get('lang')} }}</td>
+                                            {{-- <td>{{ $value->subjects }}</td> --}}
+                                          </tr>
+                                        @endforeach
+                                      </tbody>
+                                    </table>
+
+                                </div>
                               </div>
 
 
@@ -56,5 +76,4 @@
           </div>
       </div>
   </div>
-
 @endsection

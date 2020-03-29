@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-md-4 item">
                         <div class="f-item recent-post">
-                            <h4>Info Sekolah</h4>
+                            <h4>{{ $categories[0]->{'name'.Session::get('lang')} }}</h4>
                             <ul>
                               @foreach ($footerInfoSekolah as $key => $value)
                                 <li>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-4 item">
                         <div class="f-item recent-post">
-                            <h4>Agenda Sekolah</h4>
+                            <h4>{{ $categories[1]->{'name'.Session::get('lang')} }}</h4>
                             <ul>
                               @foreach ($footerAgendaSekolah as $key => $value)
                                 <li>

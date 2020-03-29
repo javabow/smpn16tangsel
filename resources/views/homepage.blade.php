@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Berita Terbaru</h2>
+                        <h2>{{ $sText->{'beritaTerbaru'.Session::get('lang')} }}</h2>
                     </div>
                 </div>
             </div>
@@ -81,9 +81,9 @@
                       </div>
                       <div class="info">
                         <h4>
-                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->{'title'.Session::get('lang')} }}</a>
                         </h4>
-                        <p class="text-justify">{!! strip_tags(str_limit($value->content, 400)) !!}</p>
+                        <p class="text-justify">{!! strip_tags(str_limit($value->{'content'.Session::get('lang')}, 400)) !!}</p>
                         <div class="meta">
                           <ul>
                             <li>
@@ -104,7 +104,7 @@
 
 
                 <div class="more-btn col-md-12 text-center">
-                  <a href="{{ url('berita') }}">Tampilkan Semua Berita</a>
+                  <a href="{{ url('berita') }}">{{ $sText->{'tampilkanSemuaBerita'.Session::get('lang')} }}</a>
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Ekstrakurikuler</h2>
+                        <h2>{{ $sText->{'ekstrakurikuler'.Session::get('lang')} }}</h2>
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Prestasi Terbaru</h2>
+                        <h2>{{ $sText->{'prestasiTerbaru'.Session::get('lang')} }}</h2>
                     </div>
                 </div>
             </div>
@@ -170,20 +170,20 @@
                       </div>
                       <div class="col-md-6 info">
                         <h4>
-                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->title }}</a>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $value->{'title'.Session::get('lang')} }}</a>
                         </h4>
                         <div class="meta">
                           <ul>
                             <li><i class="fas fa-calendar-alt"></i>{{ MyHelpers::getCustomDate3($value->updated_at) }}</li>
                           </ul>
                         </div>
-                        <p>{!! strip_tags(str_limit($value->content, 400)) !!}</p>
+                        <p>{!! strip_tags(str_limit($value->{'content'.Session::get('lang')}, 400)) !!}</p>
                       </div>
                     </div>
                   @endforeach
 
                     <div class="more-btn col-md-12 text-center">
-                        <a href="{{ url('berita/3') }}">Tampilkan semua prestasi</a>
+                        <a href="{{ url('berita/3') }}">{{ $sText->{'tampilkanSemuaPrestasi'.Session::get('lang')} }}</a>
                     </div>
 
                 </div>
@@ -203,8 +203,8 @@
                             <i class="flaticon-contract"></i>
                         </div>
                         <div class="info">
-                            <span class="timer" data-to="212" data-speed="5000"></span>
-                            <span class="medium">Prestasi <br> Internasional</span>
+                            <span class="timer" data-to="320" data-speed="5000"></span>
+                            <span class="medium">{!! $sText->{'prestasiInternasional'.Session::get('lang')} !!}</span>
                         </div>
                     </div>
                 </div>
@@ -214,8 +214,8 @@
                             <i class="flaticon-contract"></i>
                         </div>
                         <div class="info">
-                            <span class="timer" data-to="128" data-speed="5000"></span>
-                            <span class="medium">Prestasi <br> Tingkat Nasional</span>
+                            <span class="timer" data-to="428" data-speed="5000"></span>
+                            <span class="medium">{!! $sText->{'prestasiTingkatNasional'.Session::get('lang')} !!}</span>
                         </div>
                     </div>
                 </div>
@@ -225,8 +225,8 @@
                             <i class="flaticon-contract"></i>
                         </div>
                         <div class="info">
-                            <span class="timer" data-to="8970" data-speed="5000"></span>
-                            <span class="medium">Prestasi <br> Tingkat Provinsi</span>
+                            <span class="timer" data-to="4231" data-speed="5000"></span>
+                            <span class="medium">{!! $sText->{'prestasiTingkatProvinsi'.Session::get('lang')} !!}</span>
                         </div>
                     </div>
                 </div>
@@ -236,8 +236,8 @@
                             <i class="flaticon-contract"></i>
                         </div>
                         <div class="info">
-                            <span class="timer" data-to="640" data-speed="5000"></span>
-                            <span class="medium">Prestasi <br> Tingkat Kabupaten</span>
+                            <span class="timer" data-to="570" data-speed="5000"></span>
+                            <span class="medium">{!! $sText->{'prestasiTingkatKabupaten'.Session::get('lang')} !!}</span>
                         </div>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Tenaga Pendidik</h2>
+                        <h2>{{ $sText->{'tenagaPendidik'.Session::get('lang')} }}</h2>
                     </div>
                 </div>
             </div>
@@ -275,7 +275,7 @@
 
                     </div>
                     <div class="more-btn col-md-12 text-center">
-                        <a href="#">Tampilkan Semua Guru</a>
+                        <a href="#">{{ $sText->{'tampilkanSemuaTenagaPendidik'.Session::get('lang')} }}</a>
                     </div>
                 </div>
             </div>
@@ -290,7 +290,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Profil Alumni</h2>
+                        <h2>{{ $sText->{'profilAlumni'.Session::get('lang')} }}</h2>
                         <!-- <p>
                             Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh.
                         </p> -->
@@ -326,7 +326,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>Hubungi Kami</h2>
+                        <h2>{{ $sText->{'hubungiKami'.Session::get('lang')} }}</h2>
                         <!-- <p>
                             Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh.
                         </p> -->
@@ -339,7 +339,7 @@
                 <!-- Start Maps & Contact Form -->
                 <div class="maps-form">
                     <div class="col-md-6 maps">
-                        <h3>Denah Lokasi</h3>
+                        <h3>{{ $sText->{'denahLokasi'.Session::get('lang')} }}</h3>
                         <div class="google-maps">
                             {{-- <iframe src="embed.html" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> --}}
                             <div id="mapid" style="height: 270px;"></div>
@@ -347,7 +347,7 @@
                     </div>
                     <div class="col-md-6 form">
                         <div class="heading f-item address">
-                            <h3>Kontak</h3>
+                            <h3>{{ $sText->{'kontak'.Session::get('lang')} }}</h3>
                             <!-- <p>
                                 Occasional terminated insensible and inhabiting gay. So know do fond to half on. Now who promise was justice new winding
                             </p> -->
@@ -358,11 +358,11 @@
                                 </li>
                                 <li>
                                     <i class="fas fa-map"></i>
-                                    <p>Address <br><span>{{ $kontak->address }}</span></p>
+                                    <p>{{ $sText->{'alamat'.Session::get('lang')} }} <br><span>{{ $kontak->address }}</span></p>
                                 </li>
                                 <li>
                                     <i class="fas fa-phone"></i>
-                                    <p>Phone <br><span>{{ $kontak->phone }}</span></p>
+                                    <p>{{ $sText->{'nomorTelepon'.Session::get('lang')} }} <br><span>{{ $kontak->phone }}</span></p>
                                 </li>
                                 <li>
                                     <i class="fas fa-fax"></i>

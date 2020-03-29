@@ -9,7 +9,7 @@
     <meta name="description" content="SMPN 16 Tangerang Selatan">
     <meta name="keywords" content="smpn 16 tangerang selatan, smpn 16 tangsel">
 
-    <title>SMPN 16 Tangerang Selatan</title>
+    <title>{{ ($categoryName) ? $categoryName->{'name'.Session::get('lang')}.' ' : ' ' }}SMPN 16 Tangerang Selatan</title>
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
@@ -52,9 +52,9 @@
                     <ul class="breadcrumb">
                         <li><a href="{{url('/')}}"><i class="fas fa-home"></i> Home</a></li>
                         @if ($categoryName)
-                          <li class="active">{{ $categoryName->name }}</li>
+                          <li class="active">{{ $categoryName->{'name'.Session::get('lang')} }}</li>
                         @else
-                          <li class="active">Berita Terbaru</li>
+                          <li class="active">{{ $sText->{'beritaTerbaru'.Session::get('lang')} }}</li>
                         @endif
                     </ul>
                 </div>
@@ -70,10 +70,10 @@
                         </div>
                         <div class="info">
                           <h3>
-                            <a href="{{ url('detil-berita/'.$value->id) }}">{{$value->title}}</a>
+                            <a href="{{ url('detil-berita/'.$value->id) }}">{{$value->{'title'.Session::get('lang')} }}</a>
                           </h3>
-                          <p>{!! strip_tags(str_limit($value->content, 400)) !!}</p>
-                          <a href="{{ url('detil-berita/'.$value->id) }}">Read More <i class="fas fa-angle-double-right"></i></a>
+                          <p>{!! strip_tags(str_limit($value->{'content'.Session::get('lang')}, 400)) !!}</p>
+                          <a href="{{ url('detil-berita/'.$value->id) }}">{{ $sText->{'bacaLebihLanjut'.Session::get('lang')} }} <i class="fas fa-angle-double-right"></i></a>
                           <div class="meta">
                             <ul>
                               <li>
@@ -103,7 +103,7 @@
                         <!-- Start Sidebar Item -->
                         <div class="sidebar-item search">
                             <div class="title">
-                                <h4>Search</h4>
+                                <h4>{{ $sText->{'cari'.Session::get('lang')} }}</h4>
                             </div>
                             <div class="sidebar-info">
                               @if (isset($_GET['search']) && $berita[0])
@@ -117,7 +117,7 @@
                               @endif
                               <form action="{{url('berita')}}" method="GET">
                                   <input type="text" class="form-control" name="search" value="{{ $search }}">
-                                  <input type="submit" value="search">
+                                  <input type="submit" value="{{ $sText->{'cari'.Session::get('lang')} }}">
                               </form>
                             </div>
                         </div>
@@ -126,16 +126,16 @@
                         <!-- Start Sidebar Item -->
                         <div class="sidebar-item category">
                             <div class="title">
-                                <h4>Category</h4>
+                                <h4>{{ $sText->{'kategori'.Session::get('lang')} }}</h4>
                             </div>
                             <div class="sidebar-info">
                                 <ul>
                                     <li>
-                                        <a class="{{ (!$category) ? 'active' : '' }}" href="{{ url('berita') }}"><i class="{{ (!$category) ? 'fas fa-check' : '' }}"></i> Berita Terbaru</a>
+                                        <a class="{{ (!$category) ? 'active' : '' }}" href="{{ url('berita') }}"><i class="{{ (!$category) ? 'fas fa-check' : '' }}"></i> {{ $sText->{'beritaTerbaru'.Session::get('lang')} }}</a>
                                     </li>
                                     @foreach ($categories as $key => $value)
                                       <li>
-                                        <a class="{{ ($category == $value->id) ? 'active' : '' }}" href="{{url('berita/'.$value->id)}}"><i class="{{ ($category == $value->id) ? 'fas fa-check' : '' }}"></i> {{ $value->name }}</a>
+                                        <a class="{{ ($category == $value->id) ? 'active' : '' }}" href="{{url('berita/'.$value->id)}}"><i class="{{ ($category == $value->id) ? 'fas fa-check' : '' }}"></i> {{ $value->{'name'.Session::get('lang')} }}</a>
                                       </li>
                                     @endforeach
                                 </ul>
