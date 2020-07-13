@@ -1,7 +1,7 @@
 <!-- Start Banner
 ============================================= -->
 
-<div class="banner-area transparent-nav banner-search content-top-heading bg-fixed text-light text-normal text-center" style="background-image: url('{{asset('img/tes3.jpg')}}')">
+<div class="banner-area transparent-nav banner-search content-top-heading bg-fixed text-light text-normal text-center" style="background-image: url('{{asset('img/header.jpg')}}')">
     <!-- <video autoplay muted loop class="video-fix">
         <source src="#">
     </video> -->

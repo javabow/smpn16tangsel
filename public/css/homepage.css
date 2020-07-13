@@ -20,6 +20,10 @@ nav.navbar.bootsnav.navbar-fixed {
   font-weight: 800;
 }
 
+#berita .container {
+  padding: 4rem;
+}
+
 header .carousel-inner {
   height: 75vh;
 }
@@ -47,6 +51,12 @@ header .carousel-inner .carousel-caption {
   display: block !important;
 }
 
+@media only screen and (max-width: 1023px) {
+  .blog-area.full-blog.single-blog .meta .share {
+    margin-top: unset;
+    width: unset;
+  }
+}
 @media only screen and (max-width: 1023px) {
   nav.navbar.bootsnav .navbar-brand {
     margin-left: 50px !important;

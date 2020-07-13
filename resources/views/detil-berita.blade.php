@@ -17,7 +17,7 @@
                   </div>
                   <div class="blog-content col-md-10 col-md-offset-1">
                     <div class="meta">
-                      <h1 class="h2"><strong>{{ $berita->title }}</strong></h1>
+                      <h1 class="h2"><strong>{{ $berita->{'title'.Session::get('lang')} }}</strong></h1>
                       <p>Created By: <i class="fas fa-user"></i> <strong>{{ ucwords($berita->users->name) }}</strong> - Updated At: {{ MyHelpers::getCustomDate2($berita->updated_at) }}</p>
                     </div>
                     <br><hr>

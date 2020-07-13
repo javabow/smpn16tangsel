@@ -18,6 +18,7 @@ class CreateEkstrakurikulerTable extends Migration
             $table->string('name');
             $table->string('icon');
             $table->string('color');
+            $table->longText('content');
             $table->timestamps();
         });
     }

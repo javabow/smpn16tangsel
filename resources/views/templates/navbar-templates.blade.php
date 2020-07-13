@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ url('/') }}">
                   <div class="scroll-container">
                     <img src="{{ asset('img/logo-smp-16.png') }}" class="logo logo-scrolled img-responsive" alt="Logo">
                     <span>SMPN 16 Tangerang Selatan</span>
@@ -25,7 +25,7 @@
                             <li><a href="{{url('sejarah-sekolah')}}">{{ $sText->{'sejarah'.Session::get('lang')} }}</a></li>
                             <li><a href="{{url('visi-misi')}}">{{ $sText->{'visimisi'.Session::get('lang')} }}</a></li>
                             <li class="dropdown">
-                                <a href="#" >{{ $sText->{'staf'.Session::get('lang')} }}</a>
+                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown">{{ $sText->{'staf'.Session::get('lang')} }}</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{url('tenaga-pendidik')}}">{{ $sText->{'tenagaPendidik'.Session::get('lang')} }}</a></li>
                                     <li><a href="{{url('tenaga-kependidikan')}}">{{ $sText->{'tenagaKependidikan'.Session::get('lang')} }}</a></li>

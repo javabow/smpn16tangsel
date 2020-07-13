@@ -73,7 +73,7 @@ class DatabaseSeeder extends Seeder
           'name' => 'admin',
           'username' => 'admin',
           'email' => 'admin@smpn16tangsel.sch.id',
-          'password' => bcrypt('$admin123#'),
+          'password' => bcrypt('#smpn16tangsel$'),
           'dp' => '/img/profil-pic_dummy.png',
           'created_at' => date('Y-m-d H:i:s'),
           'updated_at' => date('Y-m-d H:i:s'),

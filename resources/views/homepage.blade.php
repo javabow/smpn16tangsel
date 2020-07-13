@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="SMPN 16 Tangerang Selatan">
@@ -24,13 +24,6 @@
     <link href="{{asset('web_assets/css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('web_assets/css/style2.css')}}" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="{{asset('web_assets/http://sman1yogya.sch.id/assets/js/html5/html5shiv.min.js')}}"></script>
-      <script src="{{asset('web_assets/http://sman1yogya.sch.id/assets/js/html5/respond.min.js')}}"></script>
-    <![endif]-->
 
     <!-- ========== Google Fonts ========== -->
     <link href="{{asset('web_assets/css/css_1.css')}}" rel="stylesheet">
@@ -74,7 +67,7 @@
                   <div class="col-md-4 single-item">
                     <div class="item">
                       <div class="thumb">
-                        <a href="{{ url('detil-berita/'.$value->id) }}"><img class="img img-responsive img-fluid" src="{{asset($value->thumbnail)}}"  alt="Thumb"></a>
+                        <a href="{{ url('detil-berita/'.$value->id) }}"><img onerror="this.onerror=null; this.src='{{ asset('img/dummy-img.png') }}'" class="img img-responsive img-fluid" src="{{asset($value->thumbnail)}}"  alt="Thumb"></a>
                         <div class="date">
                           {{ MyHelpers::getCustomDate($value->updated_at) }}
                         </div>
@@ -128,7 +121,7 @@
                   @foreach ($ekstrakurikuler as $key => $value)
                     <div class="col-md-3 col-sm-6 equal-height">
                       <div class="item {{ $value->color }}" style="background-image: url(images/800x600.png);">
-                        <a href="#">
+                        <a href="{{ url('ekstrakurikuler/'.$value->id) }}">
                           <i class="{{ $value->icon }}"></i>
                           <div class="info">
                             <h4>{{ $value->name }}</h4>
@@ -275,7 +268,7 @@
 
                     </div>
                     <div class="more-btn col-md-12 text-center">
-                        <a href="#">{{ $sText->{'tampilkanSemuaTenagaPendidik'.Session::get('lang')} }}</a>
+                        <a href="{{ url('tenaga-pendidik') }}">{{ $sText->{'tampilkanSemuaTenagaPendidik'.Session::get('lang')} }}</a>
                     </div>
                 </div>
             </div>

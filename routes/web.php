@@ -22,12 +22,12 @@ Route::get('/sejarah-sekolah', 'SejarahSekolahController@index');
 Route::get('/visi-misi', 'VisiMisiController@index');
 Route::get('/tenaga-pendidik', 'TenagaPendidikController@index');
 Route::get('/tenaga-kependidikan', 'TenagaKependidikanController@index');
-
 // Route::get('/berita-terbaru', function () {
 //     return view('berita-terbaru');
 // });
 Route::get('/berita/{category?}/{tag?}', 'BeritaController@index');
 Route::get('/detil-berita/{id}', 'DetilBeritaController@index');
+Route::get('/ekstrakurikuler/{id}', 'EkstrakurikulerController@show');
 
 
 Auth::routes();

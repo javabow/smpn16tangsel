@@ -42,7 +42,7 @@ class EkstrakurikulerController extends Controller
         ]);
         try
         {
-          $newData = $request->only(['name', 'icon', 'color']);
+          $newData = $request->only(['name', 'icon', 'color', 'content']);
           $ekstrakurikuler = new Ekstrakurikuler;
           foreach ($newData as $key => $value) {
             $ekstrakurikuler->{$key} = $value;
@@ -96,7 +96,7 @@ class EkstrakurikulerController extends Controller
         ]);
         try
         {
-          $newData = $request->only(['name', 'icon', 'color']);
+          $newData = $request->only(['name', 'icon', 'color', 'content']);
           $ekstrakurikuler = Ekstrakurikuler::find($id);
           foreach ($newData as $key => $value) {
             $ekstrakurikuler->{$key} = $value;

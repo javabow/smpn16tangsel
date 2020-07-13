@@ -5,6 +5,9 @@ Admin Page SMKN 16 Tangerang Selatan | Ekstrakurikuler - Edit
 @section('title-header')
   Edit Ekstrakurikuler
 @endsection
+@section('js-head')
+  <script src="{{ asset('js/ckeditor/ckeditor.js') }}" charset="utf-8"></script>
+@endsection
 @section('content')
   <div id="content-cont" class="container bg-light p-4">
     @include('admin-templates.alert-box')
@@ -62,6 +65,11 @@ Admin Page SMKN 16 Tangerang Selatan | Ekstrakurikuler - Edit
       </div>
 
     <div class="form-group">
+      <label for="content"><strong>Content</strong></label>
+      <textarea id="content" class="form-control" name="content">{{ $ekstrakurikuler->content }}</textarea>
+    </div>
+
+    <div class="form-group">
       <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-edit"></i> Update</button>
     </div>
     <input type="hidden" name="_method" value="patch">
@@ -72,7 +80,17 @@ Admin Page SMKN 16 Tangerang Selatan | Ekstrakurikuler - Edit
 
 @endsection
 @section('js')
-
+  <script>
+  $(document).ready(function() {
+    CKOPTIONS = {
+      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+    };
+    CKEDITOR.replace('content', CKOPTIONS);
+  })
+  </script>
   <script>
   {!! \File::get(base_path('vendor/unisharp/laravel-filemanager/public/js/lfm.js')) !!}
    var route_prefix = "{{ url(config('lfm.url_prefix', config('lfm.prefix'))) }}";
@@ -103,4 +121,7 @@ Admin Page SMKN 16 Tangerang Selatan | Ekstrakurikuler - Edit
         });
     });
   </script>
+
+
+
 @endsection
